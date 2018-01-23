@@ -16,6 +16,17 @@ from keras.models import load_model
 import h5py
 from keras import __version__ as keras_version
 
+# Added by me to fix cudnn as per:
+# https://github.com/tensorflow/tensorflow/issues/6698#issuecomment-297179317
+import tensorflow as tf
+from keras import backend as K
+
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+session = tf.Session(config=config)
+K.set_session(session)
+
+
 sio = socketio.Server()
 app = Flask(__name__)
 model = None
