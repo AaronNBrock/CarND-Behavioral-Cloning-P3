@@ -1,0 +1,8 @@
+Flask==1.0.2
+Flask-SocketIO==1.0b1
+Keras==2.2.4
+Pillow==6.0.0
+python-engineio==3.5.1
+python-socketio==4.0.0
+socketio==0.1.6
+tensorflow==1.13.1
